@@ -1,0 +1,46 @@
+A51 MACRO ASSEMBLER  ASSENDING                                                            11/24/2022 15:51:01 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02b
+OBJECT MODULE PLACED IN Assending.OBJ
+ASSEMBLER INVOKED BY: C:\Keil\C51\BIN\A51.EXE Assending.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7A05              2     MOV R2, #05H
+0002 1A                3     DEC R2
+0003 7850              4     BACK1: MOV R0, #50H
+0005 7951              5     MOV R1, #51H
+0007 EA                6     MOV A, R2
+0008 FB                7     MOV R3, A
+0009 E6                8     BACK: MOV A,@R0
+000A 87F0              9     MOV B,@R1
+000C B5F000           10     CJNE A, B, LOOP
+000F 4003             11     LOOP: JC LOOP1
+0011 A6F0             12     MOV @R0,B
+0013 F7               13     MOV @R1, A
+0014 08               14     LOOP1: INC R0
+0015 09               15     INC R1
+0016 DBF1             16     DJNZ R3, BACK
+0018 DAE9             17     DJNZ R2, BACK1
+                      18     END
+A51 MACRO ASSEMBLER  ASSENDING                                                            11/24/2022 15:51:01 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+BACK . . . . . . .  C ADDR   0009H   A   
+BACK1. . . . . . .  C ADDR   0003H   A   
+LOOP . . . . . . .  C ADDR   000FH   A   
+LOOP1. . . . . . .  C ADDR   0014H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
